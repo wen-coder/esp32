@@ -46,7 +46,7 @@ void show_to_screen(U8G2_SSD1306_128X64_NONAME_F_4W_SW_SPI u8g2, char *str,  enu
 { 
  
   uint16_t len = strlen(str) / 3;
-  log_i("show_to_screen, show_str.len = %d,", len);
+  log_i("show_to_screen, show_str.len = %d,\n", len);
   switch (x)
   {  
     case mid:
