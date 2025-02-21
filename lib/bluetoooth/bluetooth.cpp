@@ -1,4 +1,4 @@
-#include <blue_tooth.h>
+#include <bluetooth.h>
 #include <Wire.h>
 BluetoothSerial SerialBT;
 void task_blue_tooth(void *pvParameters)
@@ -12,6 +12,7 @@ int LED = 4; //灯
     Serial.println("The device started, now you can pair it with bluetooth!");
     while (1)
     {
+        log_i("BT_task");
         if (Serial.available()) 
         {
             SerialBT.write(Serial.read());
@@ -35,6 +36,6 @@ int LED = 4; //灯
                 Serial.println("抱歉，您发送的指令不对哦");
             }      
         }
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        vTaskDelay(1000);
     }
 }

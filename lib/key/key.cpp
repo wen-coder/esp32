@@ -18,6 +18,7 @@ void key_scan(void *pvParameters) {
     
     while (1)
     {
+        log_i("key_scan\n");
         for(int i = 0; i < 2; i++)
         {
             digitalWrite(KEY_OUT[i], HIGH);

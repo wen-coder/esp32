@@ -1,5 +1,5 @@
-#ifndef KEY_
-#define KEY_
+#ifndef KEY_KEY_
+#define KEY_KEY_
 #include <Wire.h>
 #include <Arduino.h>
 #include <freertos/FreeRTOS.h>
@@ -12,12 +12,12 @@
 // #define KEY_IN3  11
 // #define KEY_IN4  12
 
-#define KEY_OUT1 27
-#define KEY_OUT2 27
-#define KEY_IN1  28
-#define KEY_IN2  28
-#define KEY_IN3  28
-#define KEY_IN4  28
+#define KEY_OUT1 5
+#define KEY_OUT2 18
+#define KEY_IN1  19
+#define KEY_IN2  21
+#define KEY_IN3  22
+#define KEY_IN4  23
 
 enum key_state {
     key_up,

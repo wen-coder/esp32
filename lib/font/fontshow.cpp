@@ -1,4 +1,4 @@
-#include <Font_library.h>
+#include <fontlibrary.h>
 
 #include <U8g2lib.h>
 void testdrawbitmap(void);
@@ -16,9 +16,10 @@ void task_show_font_(void *pvParameters) {
   char str[] = "你好你好你好你好";		// Chinese "Hello World"
   for(;;)
   {
+    log_i("task_show_font_");
     u8g2.clearBuffer();
     show_to_screen(u8g2, str, mid, 1);
-    vTaskDelay(200);
+    vTaskDelay(500);
   }
 }
 
@@ -46,7 +47,7 @@ void show_to_screen(U8G2_SSD1306_128X64_NONAME_F_4W_SW_SPI u8g2, char *str,  enu
 { 
  
   uint16_t len = strlen(str) / 3;
-  log_i("show_to_screen, show_str.len = %d,\n", len);
+  // log_i("show_to_screen, show_str.len = %d,\n", len);
   switch (x)
   {  
     case mid:

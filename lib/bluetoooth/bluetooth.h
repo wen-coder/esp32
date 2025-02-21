@@ -1,5 +1,5 @@
-#ifndef BLUE_TOOTH_H
-#define BLUE_TOOTH_H
+#ifndef BLUETOOTH_BLUETOOTH_H
+#define BLUETOOTH_BLUETOOTH_H
 
 
 

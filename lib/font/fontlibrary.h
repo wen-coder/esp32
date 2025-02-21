@@ -1,5 +1,5 @@
-#ifndef _FONT_LIBRARY_H_
-#define _FONT_LIBRARY_H_
+#ifndef FONT_FONTLIBRARY_H_
+#define FONT_FONTLIBRARY_H_
 #include <Arduino.h>
 #include <SPI.h>
 #include <Wire.h>
