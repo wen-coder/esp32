@@ -1,6 +1,9 @@
 #include <fontlibrary.h>
 
 #include <U8g2lib.h>
+
+QueueHandle_t input_Queue = xQueueCreate(10, sizeof(int));   //输入队列
+
 void testdrawbitmap(void);
 // Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT,
 //   OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
@@ -14,9 +17,20 @@ void task_show_font_(void *pvParameters) {
   u8g2.setFont(u8g2_font_wqy14_t_chinese2);  
   u8g2.setFontDirection(2);
   char str[] = "你好你好你好你好";		// Chinese "Hello World"
+  char shang[] = "上";
+  char xia[] = "下";
+  char you[] = "右";
+  char zuo[] = "左";
+  char queren[] = "确认";
+  char quxiao[] = "取消";
+  
   for(;;)
   {
     log_i("task_show_font_");
+    int receivedData;
+    if (xQueueReceive(input_Queue, &receivedData, portMAX_DELAY) == pdTRUE) {
+    printf("Received data: %d\n", receivedData);  // 打印接收到的数据
+    }
     u8g2.clearBuffer();
     show_to_screen(u8g2, str, mid, 1);
     vTaskDelay(500);
